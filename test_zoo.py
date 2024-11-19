@@ -9,8 +9,9 @@ class TestZoo(unittest.TestCase):
         self.assertEqual(self.zoo.get_ticket_price(5), 50)
        
     # Add your additional test cases here.
-    def test_child_ticket_price1(self):
-        self.assertRaises(ValueError, get_ticket_price, -1)
+   def test_child_ticket_price1(self):
+        with self.assertRaises(ValueError):
+            self.zoo.get_ticket_price(-1)
     def test_child_ticket_price2(self):
         self.assertEqual(self.zoo.get_ticket_price(20), 100)
     def test_child_ticket_price3(self):
